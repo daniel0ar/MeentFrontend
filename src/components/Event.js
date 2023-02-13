@@ -8,7 +8,7 @@ const Event = ({ evt }) => {
 
             {/* Event Image  */}
             <div className={styles.img}>
-                <Image src={evt.image ? evt.image : '/images/event-default.png'} width={170} height={100} />
+                <Image src={evt.image ? evt.image : '/images/event-default.png'} width={170} height={100} alt={evt.name} />
             </div>
 
             {/* Event Info */}

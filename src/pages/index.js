@@ -7,7 +7,6 @@ import Link from "next/link";
 export default function Homepage(props) {
 
   const { events } = props;
-  console.log(events);
   return (
     <Layout>
       <h1>Upcoming Events</h1>
