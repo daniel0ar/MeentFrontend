@@ -1,8 +1,11 @@
+import Link from "next/link";
+import Head from "next/head";
+import Layout from "@/components/Layout";
 
 export default function Homepage() {
   return (
-    <div>
-      <h1>Homepage</h1>
-    </div>
+    <Layout>
+
+    </Layout>
   )
 }
