@@ -1,3 +1,7 @@
+$color-primary: #ffff7cff;
+$color-secondary: #4f35ffff;
+$color-ternary: #ca7ffeff;
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -27,12 +31,12 @@
 
 
 .logo {
-    color: red;
+    color: $color-secondary;
     font-size: 20px;
     text-transform: uppercase;
 
     a {
-        color: red;
+        color: $color-secondary;
     }
 }
 

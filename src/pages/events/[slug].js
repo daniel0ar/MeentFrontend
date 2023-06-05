@@ -4,7 +4,6 @@ import { API_URL } from "@/config";
 import styles from "@/styles/sevent.module.scss"
 import Link from "next/link";
 import Image from "next/image";
-import { FaPencilAlt, FaTimes } from "react-icons/fa";
 
 function EventPage(props) {
 
@@ -17,11 +16,16 @@ function EventPage(props) {
     return (
         <Layout>
             <div className={styles.event}>
-
-                {/* Buttons */}
+                <Link href={"/events"} className={styles.back}>Go Back</Link>
+                {/* Buttons 
                 <div className={styles.controls}>
                     <Link href={`/events/edit/${event.id}`}><FaPencilAlt />Edit Event</Link>
                     <Link href="#" className={styles.delete} onClick={deleteEvent}><FaTimes />Delete Event</Link>
+                </div>*/}
+
+                {/* Button for minting */}
+                <div className={styles.link}>
+                    <Link href="" className='btn'>Mint Ticket</Link>
                 </div>
 
                 {/* Date and Time */}
@@ -44,8 +48,6 @@ function EventPage(props) {
 
                 <h3>Venue: {event.venue}</h3>
                 <p>{event.address}</p>
-
-                <Link href={"/events"} className={styles.back}>Go Back</Link>
             </div>
         </Layout>
     )

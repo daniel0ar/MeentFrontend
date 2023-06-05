@@ -1,3 +1,7 @@
+$color-primary: #ffff7cff;
+$color-secondary: #4f35ffff;
+$color-ternary: #ca7ffeff;
+
 .event {
     display: flex;
     justify-content: space-between;
@@ -19,17 +23,22 @@
 }
 
 .link {
-    background: orangered;
+    background: $color-primary;
     border-radius: 5px;
     transition: all 0.3s ease;
 
     a {
-        color: white;
+        color: $color-secondary;
         font-weight: 500;
     }
 
     &:hover {
-        background: darken($color: orangered, $amount: 5%);
+        background: darken($color: $color-primary, $amount: 20%);
+        cursor: pointer ;
+        
+        a {
+            font-weight: bolder;
+        }
     }
 }
 
