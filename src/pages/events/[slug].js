@@ -1,5 +1,6 @@
 import { useRouter } from "next/router"
 import Layout from "@/components/Layout";
+import MeentButton from "@/components/MeentButton";
 import { API_URL } from "@/config";
 import styles from "@/styles/sevent.module.scss"
 import Link from "next/link";
@@ -23,10 +24,7 @@ function EventPage(props) {
                     <Link href="#" className={styles.delete} onClick={deleteEvent}><FaTimes />Delete Event</Link>
                 </div>*/}
 
-                {/* Button for minting */}
-                <div className={styles.link}>
-                    <Link href="" className='btn'>Mint Ticket</Link>
-                </div>
+                <MeentButton event={event}></MeentButton>
 
                 {/* Date and Time */}
                 <span>

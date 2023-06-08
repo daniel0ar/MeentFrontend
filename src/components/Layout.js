@@ -6,7 +6,7 @@ import Showcase from "./Showcase";
 import { useRouter } from "next/router";
 
 const Layout = ({
-    title = "Concert",
+    title = "Meent Test Front",
     keywords = "music, events, local",
     description = "Find local concert events",
     children }) => {
