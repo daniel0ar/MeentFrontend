@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from "@/styles/meent.module.scss";
 import meentContract from "../meent";
 import web3 from "../web3";
@@ -6,14 +6,22 @@ import web3 from "../web3";
 const MeentButton = (event) => {
   const [message, setMessage] = useState('');
 
-  const onSubmit = async () => {
+  useEffect(() => {
+    setMessage("Mint Ticket");
+  });
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
     setMessage('Waiting on transaction to succeed...');
     
     try {
       const accounts = await web3.eth.getAccounts();
-      await meentContract.methods.buyTicket(2).send({
+      console.log(event);
+      console.log(event.id);
+      console.log(event.price);
+      await meentContract.methods.buyTicket(event.event.id).send({
         from: accounts[0],
-        value: 100
+        value: web3.utils.toWei(event.event.price,'ether')
       });
       setMessage('Ticket bought successfully!');
     } catch (error) {
@@ -24,8 +32,7 @@ const MeentButton = (event) => {
 
   return (
     <div className={styles.link}>
-      <a href="" className='btn' onClick={onSubmit}>Mint Ticket</a>
-      <h4>{message}</h4>
+      <a href="" className='btn' onClick={onSubmit}>{message}</a>
     </div>
   );
 };
